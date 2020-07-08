@@ -1,0 +1,19 @@
+modules:
+  webtrigger:
+    - key: intelligent-inventories-webtrigger-sync
+      function: sync
+    - key: intelligent-inventories-webtrigger-async
+      function: async
+  function:
+    - key: async
+      handler: index.runAsync
+    - key: buildOutput
+      handler: index.buildOutput
+    - key: createInventoryIssue
+      handler: index.createInventoryIssue
+app:
+  id: 'ari:cloud:ecosystem::app/1b8eba66-1d79-4c1b-b6ae-c9fbfe80e6df'
+  name: Intelligent_Inventories
+permissions:
+  scopes:
+    - 'read:jira-user'
