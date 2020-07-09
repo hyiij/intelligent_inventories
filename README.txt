@@ -14,6 +14,11 @@ relays inbound inventory information to Forge.
 
 *** Jira Instructions:
 1. Create a Jira Cloud project with the project key set to "II".
+2. Add yourself to the "Adminstrator" role for this Jira project.
+   2a. Click on "Project Settings" then click on "People".
+   2b. Click the "Add People" button and add your name to the
+       "Adminstrator" role.
+3. Ensure the Task issue type is available for this project.
 
 *** Gmail Instructions:
 1. Add the labels "Inbound Inventory" and "Logged" to a Gmail account.
@@ -48,6 +53,10 @@ https://zapier.com/shared/8e96053671a068c4470418d1a0dcc5070ecc8469
 2. Execute 'forge webtrigger <jira-installation-id>'.
 3. Execute 'forge variables:set WEBTRIGGER_URL "<webtrigger-url>"
 4. Execute 'forge deploy'.
+
+** Part 3: USER_ID Setup
+1. Execute 'forge variables:set USER_ID "<account_Id>"'.
+2. Execute 'forge deploy'.
 
 *** Zapier Instructions (continued):
 1. In Step 2 (Do this ... POST), copy the WEBTRIGGER_URL into the 

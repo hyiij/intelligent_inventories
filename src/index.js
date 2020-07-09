@@ -11,21 +11,12 @@ const buildOutput = (rnd) => ({
 });
 
 const createInventoryIssue = async (summary, description) => {
-console.log("Hello from main()!");
+  const USER_ID = process.env.USER_ID;
 
-  // const userIdResponse = await api
-  //   .asUser()
-  //   .requestJira("/rest/api/3/myself", {
-  //     method: "GET",
-  //     headers: { "Content-Type": "application/json" },
-  //     scopes: "read:jira-user"
-  //   });
-console.log("I made it here!");
-
-//   const userIdResponseBody = await userIdResponse.json();
-// //  const obj = JSON.parse(userIdResponseBody.accountId);
-// console.log("I made it this far!");
-// console.log(userIdResponseBody.accountId);
+  if(!USER_ID)
+  {
+    console.log("USER_ID is not set!  Please review the README instructions.");
+  }
 
   const response = await api
     .asApp()
@@ -36,8 +27,8 @@ console.log("I made it here!");
         fields: {
           project: { key: 'II' },
           issuetype: { id: '10001' },
-          reporter: { id: '5c425535a0376d4fe1e641bf' },
-          assignee: { id: '5c425535a0376d4fe1e641bf' },
+          reporter: { id: USER_ID },
+          assignee: { id: USER_ID },
           summary: summary,
           description: description
         }
