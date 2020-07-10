@@ -10,14 +10,7 @@ const buildOutput = (rnd) => ({
   statusText: "OK"
 });
 
-const createInventoryIssue = async (summary, description) => {
-  const USER_ID = process.env.USER_ID;
-
-  if(!USER_ID)
-  {
-    console.log("USER_ID is not set!  Please review the README instructions.");
-  }
-
+const createInventoryIssue = async (summary, description, USER_ID) => {
   const response = await api
     .asApp()
     .requestJira("/rest/api/2/issue", {
@@ -36,12 +29,20 @@ const createInventoryIssue = async (summary, description) => {
     });
 
   const responseBody = await response.json();
-  console.log(responseBody);
 };
 
 exports.runAsync = (req) => {
+  const USER_ID = process.env.USER_ID;
+  if(!USER_ID)
+  {
+    console.log("USER_ID is not set!  Please review the README instructions.");
+    return;
+  }
+
   const obj = JSON.parse(req.body);
-  createInventoryIssue(obj.summary, obj.description);
+  createInventoryIssue(obj.summary, obj.description, USER_ID);
+
+  console.log("Thank you for using the Intelligent Inventories app!");
 
   return new Promise((resolve) => {
     setTimeout(() => {
