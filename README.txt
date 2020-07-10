@@ -91,7 +91,7 @@ and relays inbound inventory information to Forge.
    "Zap is ready - now turn it on!"  Turn it on.
 5. Click Done Editing.
    5a. Note: There should be a new Jira issue in your project.  This is the test
-   issue created as part of setting up Zapier.  You may delete it if desired.
+       issue created as part of setting up Zapier.  You may delete it if desired.
 6. Click the Zapier icon in the upper left corner.  Then click the hamburger
    menu icon and click on Task History.  Click on the Task Log tab.  Here you
    can easily check the status of your Zaps.
