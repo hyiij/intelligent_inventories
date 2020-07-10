@@ -1,13 +1,12 @@
 * Introduction *
 
-The Intelligent Inventories app integrates Jira's project management
-superpowers with the tools you use every day!  For Codegeist 2020, only 
-the "Inbound Inventory" module was implemented.  This module creates a 
-new Jira issue based on inbound inventory item details.  A new inbound 
-inventory item is identified by the inventory clerk (or other applicable
-job title) who labels the email containing the order details with the
-"Inbound Inventory" Gmail label. This label triggers a Zapier Zap and
-relays inbound inventory information to Forge.
+The Intelligent Inventories app integrates Jira's project management superpowers
+with the tools you use every day!  For Codegeist 2020, only the "Inbound Inventory"
+module was implemented.  This module creates a new Jira issue based on inbound
+inventory item details.  A new inbound inventory item is identified by the inventory
+clerk (or other applicable job title) who labels the email containing the inventory
+details with the "Inbound Inventory" Gmail label.  This label triggers a Zapier Zap
+and relays inbound inventory information to Forge.
 
 
 
@@ -26,10 +25,12 @@ relays inbound inventory information to Forge.
 *** Gmail Instructions:
 1. Add the labels "Inbound Inventory" and "Logged" to a Gmail account.
 
+
+
 *** Zapier Instructions (Part 1):
 1. Access the Zap at the following URL:
    https://zapier.com/shared/8e96053671a068c4470418d1a0dcc5070ecc8469
-2. Sign in to Zapier or sign up.  A trial is available for first time users.
+2. Sign in to Zapier or sign up.  A free trial is available for first time users.
 3. In Step 1 (New Labeled Email in Gmail), add the Gmail account, click
    Continue, and choose "Inbound Inventory" for the "Label/Mailbox" field.
    3a. Test the trigger and click Continue.
@@ -47,9 +48,7 @@ relays inbound inventory information to Forge.
 
 
 *** Forge Instructions:
-
 ** Part 1: General Setup
-
 1. If you haven't already, complete the Getting Started instructions for
    Forge (https://developer.atlassian.com/platform/forge/getting-started/).
 2. Clone this repository.
@@ -88,12 +87,11 @@ relays inbound inventory information to Forge.
        your email when you test Step 3 and successfully removed from your email
        when you test Step 4, it is okay to click the Skip Test link and keep going.  
 3. In Step 4 (Remove Label from Email in Gmail), click Test & Continue.
-4. Look for a little dark gray popup at the bottom of your screen.  It says
+4. Look for a little, dark gray popup at the bottom of your screen.  It says
    "Zap is ready - now turn it on!"  Turn it on.
 5. Click Done Editing.
-   5a. Note: By now, there should be a new Jira issue in your project.  This
-       is the test issue created as part of setting up Zapier.  You may delete it
-       if desired.
+   5a. Note: There should be a new Jira issue in your project.  This is the test
+   issue created as part of setting up Zapier.  You may delete it if desired.
 6. Click the Zapier icon in the upper left corner.  Then click the hamburger
    menu icon and click on Task History.  Click on the Task Log tab.  Here you
    can easily check the status of your Zaps.
@@ -110,6 +108,7 @@ relays inbound inventory information to Forge.
 
 
 * Running the Intelligent Inventories App *
+
 1. If desired, execute 'forge tunnel'.
 2. Add the "Inbound Inventory" label to an invoice email.
 3. Wait between 1 and 15 minutes for Zapier to start the Zap.
