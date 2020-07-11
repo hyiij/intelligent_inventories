@@ -1,13 +1,12 @@
 * Introduction *
 
 The Intelligent Inventories app integrates Jira's project management superpowers
-with the tools you use every day!  For Codegeist 2020, only the "Inbound Inventory"
-module was implemented.  This module creates a new Jira issue based on inbound
-inventory item details.  A new inbound inventory item is identified by the inventory
-clerk (or other applicable job title) who labels the email containing the inventory
-details with the "Inbound Inventory" Gmail label.  This label triggers a Zapier Zap
-and relays inbound inventory information to Forge.
-
+with the tools you use every day!  For Codegeist 2020, the "Inbound Inventory" 
+module of Intelligent Inventories was implemented.  This module creates a new Jira
+issue based on inbound inventory item details.  A new inbound inventory item is
+identified by the inventory clerk (or other applicable role) who labels the email
+containing the inventory item details with the "Inbound Inventory" Gmail label.
+This label triggers a Zapier Zap and relays inbound inventory item details to Forge.
 
 
 * Setup Instructions *
