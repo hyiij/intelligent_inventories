@@ -36,13 +36,13 @@ This label triggers a Zapier Zap and relays inbound inventory item details to Fo
 4. Skip Step 2 (POST) for now.
 5. In Step 3 (Add Label to Email in Gmail), add the same Gmail account, click
    Continue, and choose "Logged" for the "Label(s) to Add" field.
-   5a. Zapier will complain about an issue with Step 2.  Ignore this issue
-       and move on to Step 4 (Remove Label from Email in Gmail).
+   5a. Zapier will complain about an issue with Step 2 (POST).  Ignore this
+       issue and move on to Step 4 (Remove Label from Email in Gmail).
 6. In Step 4 (Remove Label from Email in Gmail), add the same Gmail account,
    click Continue, and choose "Inbound Inventory" for the "Label(s) to Remove" field.
-   6a. Click Continue.  Now Zapier will complain about an issue with Step 2 and 
-       Step 3.  Ignore this for now and minimize the Zapier window.  We will come
-       back to this.
+   6a. Click Continue.  Now Zapier will complain about an issue with Step 2 (POST)
+       and Step 3 (Add Label to Email in Gmail).  Ignore this for now and minimize
+       the Zapier window.  We will come back to this.
 
 
 
@@ -66,9 +66,9 @@ This label triggers a Zapier Zap and relays inbound inventory item details to Fo
 
 ** Part 3: USER_ID Setup
 1. Execute 'forge variables:set USER_ID "<account_Id>"'.
-   1a. Hint: An easy way to access your account ID is to click your avatar
-       in the upper right corner and then click "Profile."  Afterwards,
-       copy the alphanumeric string after ".../people/".
+   1a. Hint: An easy way to access your account ID on the Jira Cloud site
+       is to click on your avatar in the upper right corner and then click 
+       "Profile".  Afterwards, copy the alphanumeric string after ".../people/".
 2. Execute 'forge deploy'.
 
 
@@ -83,11 +83,12 @@ This label triggers a Zapier Zap and relays inbound inventory item details to Fo
        to verify the success of the test.  Try the test again if necessary.  For 
        Step 3 (Add Label to Email in Gmail) and Step 4 (Remove Label from Email in 
        Gmail), Zapier can be quirky.  As long as the label is successfully added to
-       your email when you test Step 3 and successfully removed from your email
-       when you test Step 4, it is okay to click the Skip Test link and keep going.  
+       your email when you test Step 3 (Add Label to Email in Gmail) and successfully
+       removed from your email when you test Step 4 (Remove Label from Email in Gmail),
+       it is okay to click the Skip Test link and keep going.  
 3. In Step 4 (Remove Label from Email in Gmail), click Test & Continue.
 4. Look for a little, dark gray popup at the bottom of your screen.  It says
-   "Zap is ready - now turn it on!"  Turn it on.
+   "Zap is ready - now turn it on!"  Turn your new Zap on.
 5. Click Done Editing.
    5a. Note: There should be a new Jira issue in your project.  This is the test
        issue created as part of setting up Zapier.  You may delete it if desired.
@@ -100,7 +101,7 @@ This label triggers a Zapier Zap and relays inbound inventory item details to Fo
 *** Sample Email Setup:
 1. In the "sample_emails" folder in the repo, open the sample emails and 
    follow the instructions inside of the files.
-   1a. Using sample emails is optional.  Please be aware that this app does
+   1a. Note: Using sample emails is optional.  Please be aware that this app does
        not support HTML or large emails and your results may vary if you use
        emails other than the sample emails provided.
 
@@ -109,14 +110,14 @@ This label triggers a Zapier Zap and relays inbound inventory item details to Fo
 * Running the Intelligent Inventories App *
 
 1. If desired, execute 'forge tunnel'.
-2. Add the "Inbound Inventory" label to an invoice email.
+2. Add the "Inbound Inventory" label to a sample email.
 3. Wait between 1 and 15 minutes for Zapier to start the Zap.
    3a. Note: This time varies based on your Zapier plan.  The cheapest plans
        (Free and Starter) have a 15 minute update time whereas the other plans
        have a 1 or 2 minute update time.
 4. The app is finished executing when you see the message "Thank you for using
-   the Intelligent Inventories app!" on the CLI.  If you choose not to use the CLI,
-   the app is finished executing when you see the new Jira issue.
+   the Intelligent Inventories app!" print out on the console.  If you choose not
+   to use the CLI, the app is finished executing when you see the new Jira issue.
    4a. Another indicator that the app is finished executing is when the
        "Inbound Inventories" label is removed and the "Logged" label is added.
        Gmail labels are quirky and it may be necessary to refresh the page
